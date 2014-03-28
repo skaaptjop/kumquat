@@ -1,4 +1,4 @@
-package imqs.kumquat
+package za.co.monadic.kumquat
 
 import org.scalatest.{Matchers, FunSpec}
 import spray.http._
@@ -13,7 +13,6 @@ import spray.can.Http
 import akka.util.Timeout
 import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
-
 
 /**
  * User: weber
@@ -32,7 +31,7 @@ class RestTest  extends FunSpec with Matchers {
   describe("deliver packets") {
 
     it("delivers single packets") {
-      val packets = Source.fromFile("src/test/scala/imqs/kumquat/test.csv","UTF-8").getLines()
+      val packets = Source.fromFile("src/test/scala/za/co/monadic/kumquat/test.csv","UTF-8").getLines()
       def getBody(t:String) = HttpEntity(`text/csv`,t)
       def post(body:String ) = HttpRequest(method = PUT, uri = "http://localhost:9111/api/telco/v1_0/uploadraw", entity = getBody(body) )
 

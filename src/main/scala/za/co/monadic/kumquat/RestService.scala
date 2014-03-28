@@ -1,4 +1,4 @@
-package imqs.kumquat
+package za.co.monadic.kumquat
 
 import akka.io.IO
 import spray.can.Http
